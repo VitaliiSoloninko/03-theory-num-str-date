@@ -32,7 +32,7 @@ const dateBtn = document.getElementById('date')
 const timeBtn = document.getElementById('time')
 
 // коли повторюється функціонал,
-// це ідеально за замикаючої функції
+// це ідеально для замикаючої функції
 // в даному випадку для 3 кнопок
 function bindMode(name) {
 	return function () {
@@ -57,7 +57,7 @@ timeBtn.onclick = bindMode('time')
 // 	update()
 // }
 
-setInterval(update, 100)
+setInterval(update, 1000)
 update()
 
 // setInterval(() => {
@@ -74,7 +74,7 @@ function format(formatMode) {
 	const now = new Date()
 	switch (formatMode) {
 		case 'time':
-			return now.toLocaleTimeString() + '.' + now.getMilliseconds()
+			return now.toLocaleTimeString()
 		case 'date':
 			return now.toLocaleDateString()
 		case 'full':
